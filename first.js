@@ -1,4 +1,7 @@
-let a = 3
-let b = 4
-
+let a, b
 console.log(`a:${b}, b:${a}`) 
+
+
+const str = new String("Hello")
+
+console.log(typeof(str))
