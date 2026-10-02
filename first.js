@@ -71,11 +71,31 @@ function handleObject(anyobject) {
 
 // handleObject(user)
 
-handleObject({
-    username: "sam",
-    price: 399
-})
+// handleObject({
+//     username: "sam",
+//     price: 399
+// })
 /*
 variables, datatypes, conversion, strings, numbers, date and time in js
 arrays, objects
 */
+
+
+const addTwo = (num1, num2) =>({username: "hitesh"}); // arrow function
+
+// console.log(addTwo(3,4))
+
+(function open(){
+    console.log(`DB CONNECTED`)
+})();
+// IIFE Immediately Invoked Function Expression
+
+// to avoid the pollution of global scope 
+
+( () => {
+    console.log(`DB CONNECTED TWO`)
+})();
+
+( (name) => {
+    console.log(`DB CONNECTED TWO ${name}`);
+})("Prabhanshu");
