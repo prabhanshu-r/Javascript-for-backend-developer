@@ -189,3 +189,21 @@ do {
     console.log(`Score is &{score}`);
     score++
 } while (score <= 10)
+
+// Heigher order array loops
+
+// [{}, {}, {}]
+// ["", "", ""] 
+
+const arr = [1, 2, 3, 4, 5]
+
+// for-of loop
+// for (const iterator of Object) {
+
+// }
+
+for (const nums of arr) {
+    console.log(num);
+}
+
+//6:49
