@@ -99,3 +99,93 @@ const addTwo = (num1, num2) =>({username: "hitesh"}); // arrow function
 ( (name) => {
     console.log(`DB CONNECTED TWO ${name}`);
 })("Prabhanshu");
+
+
+//execution code + call stack
+
+//conditonal statemnt !== === 
+
+const userLoggedIn = true
+const debitCard = true
+const loggedInFromGoogle = false
+const loggedInFromEmail = true
+
+if(userLoggedIn && debitCard & 2==3) {
+    console.log("Allow to buy course");
+}
+
+if (loggedInFromEmail || loggedInFromGoogle) {
+    console.log("User logged in");
+}
+
+const month = 3
+
+switch (month) {
+    case 3:
+        console.log("march");
+        break;
+    case 2:
+        console.log("february");
+        break;
+    default:
+        console.log("april");
+        break;
+}
+
+// truthy and falsy
+
+// const userEmail = "prabhanshu@gmail.com"
+const userEmail = []
+
+if(userEmail) {
+    console.log("Got user email");
+} else {
+    console.log("Don't have user email");
+}
+
+// falsy values - false, 0, -0, Bigint 0n, "", null, undefined, NaN
+
+// truthy values - [], {}, function(){}
+
+
+const emptyObj = {}
+
+if (Object.keys(emptyObj).length === 0) {
+    console.log("object is empty");
+}
+
+// false == 0, false == '', 0 == '' - true
+
+//Nulliish Coalescing Operator (??) : null undefined
+
+let val1;
+// val1 = 5 ?? 10
+// val1 = null ?? 5 ?? 10
+
+val1 = null ?? 10 // seafty cheacker 
+
+console.log(val1)
+
+// Terniary Operator
+
+// condition ? true : false
+
+let num = 7
+
+num = (num < 10) ? 10 : 9
+
+console.log(num);
+
+
+// const start = (x) => (return x + x); xxx
+// const start = (x) => (x+x);
+const start = (x) => {
+    return x+x;
+};
+
+let score = 1;
+
+do {
+    console.log(`Score is &{score}`);
+    score++
+} while (score <= 10)
