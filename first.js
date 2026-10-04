@@ -297,7 +297,7 @@ myCoding.forEach( (item) => {
 //     return item;
 // })
 
-const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // const newNums = myNums.filter( (nums) => nums > 4) // map never returns but filter retuns
 const newNums = myNums.filter( (num)  => {
@@ -374,6 +374,28 @@ userBooks = books.filter( (b) => {
     return b.published > 2000 && b.genre === 'Romance'
 })
 
-console.log(userBooks);
+// console.log(userBooks);
+
+// const numArr = myNums.map( (num) => {return num + 10})
+
+// console.log(numArr);
+
+const numArr = myNums
+                .map((num) => num * 10)
+                .map((num) => num + 1)
+                .filter((num) => num >= 40)
+// chaining
+
+// console.log(numArr)
 
 
+myNums = [1, 2, 3]
+
+// const myTotal = myNums.reduce(function (acc, currval) {
+//     console.log(`acc: ${acc} and currval: ${currval}`);
+//     return acc + currval
+// }, 0)
+
+console.log(myTotal);
+
+// 32:59
