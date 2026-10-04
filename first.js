@@ -66,7 +66,7 @@ const user = {
 }
 
 function handleObject(anyobject) {
-    console.log(`username is ${anyobject.username} and price is ${anyobject.price}`);
+    // console.log(`username is ${anyobject.username} and price is ${anyobject.price}`);
 }
 
 // handleObject(user)
@@ -86,18 +86,18 @@ const addTwo = (num1, num2) =>({username: "hitesh"}); // arrow function
 // console.log(addTwo(3,4))
 
 (function open(){
-    console.log(`DB CONNECTED`)
+    // console.log(`DB CONNECTED`)
 })();
 // IIFE Immediately Invoked Function Expression
 
 // to avoid the pollution of global scope 
 
 ( () => {
-    console.log(`DB CONNECTED TWO`)
+    // console.log(`DB CONNECTED TWO`)
 })();
 
 ( (name) => {
-    console.log(`DB CONNECTED TWO ${name}`);
+    // console.log(`DB CONNECTED TWO ${name}`);
 })("Prabhanshu");
 
 
@@ -111,24 +111,24 @@ const loggedInFromGoogle = false
 const loggedInFromEmail = true
 
 if(userLoggedIn && debitCard & 2==3) {
-    console.log("Allow to buy course");
+    // console.log("Allow to buy course");
 }
 
 if (loggedInFromEmail || loggedInFromGoogle) {
-    console.log("User logged in");
+    // console.log("User logged in");
 }
 
 const month = 3
 
 switch (month) {
     case 3:
-        console.log("march");
+        // console.log("march");
         break;
     case 2:
-        console.log("february");
+        // console.log("february");
         break;
     default:
-        console.log("april");
+        // console.log("april");
         break;
 }
 
@@ -138,9 +138,9 @@ switch (month) {
 const userEmail = []
 
 if(userEmail) {
-    console.log("Got user email");
+    // console.log("Got user email");
 } else {
-    console.log("Don't have user email");
+    // console.log("Don't have user email");
 }
 
 // falsy values - false, 0, -0, Bigint 0n, "", null, undefined, NaN
@@ -151,7 +151,7 @@ if(userEmail) {
 const emptyObj = {}
 
 if (Object.keys(emptyObj).length === 0) {
-    console.log("object is empty");
+    // console.log("object is empty");
 }
 
 // false == 0, false == '', 0 == '' - true
@@ -164,7 +164,7 @@ let val1;
 
 val1 = null ?? 10 // seafty cheacker 
 
-console.log(val1)
+// console.log(val1)
 
 // Terniary Operator
 
@@ -174,7 +174,7 @@ let num = 7
 
 num = (num < 10) ? 10 : 9
 
-console.log(num);
+// console.log(num);
 
 
 // const start = (x) => (return x + x); xxx
@@ -186,7 +186,7 @@ const start = (x) => {
 let score = 1;
 
 do {
-    console.log(`Score is &{score}`);
+    // console.log(`Score is &{score}`);
     score++
 } while (score <= 10)
 
@@ -203,7 +203,21 @@ const arr = [1, 2, 3, 4, 5]
 // }
 
 for (const nums of arr) {
-    console.log(num);
+    // console.log(num);
 }
 
-//6:49
+//6:49sec
+
+// Map - object, holds key value pairs, unique and ordered
+
+const map = new Map()
+
+map.set('IN', "India")
+map.set('USA', "United States of America")
+map.set('FR', "France")
+
+// console.log(map);
+
+for (const [key, value] of map) {
+    console.log(key, ':-', value);
+}
