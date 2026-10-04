@@ -289,5 +289,91 @@ const myCoding = [
 ]
 
 myCoding.forEach( (item) => {
-    console.log(item.languageFileName);
+    // console.log(item.languageFileName);
 })
+
+// const values = programming.forEach( (item) => {
+//     // console.log(item);
+//     return item;
+// })
+
+const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// const newNums = myNums.filter( (nums) => nums > 4) // map never returns but filter retuns
+const newNums = myNums.filter( (num)  => {
+    return num > 4; // in this only writing num > 4 will not work because after using {} we have started the scope so we need to do explicite return 
+})
+
+// console.log(newNums);
+// console.log(typeof(newNums)); // object
+
+const newNum = []
+
+myNums.forEach( (num) => {
+    if(num > 4) {
+        newNum.push(num)
+    }
+}) // you can also use filter 
+
+// console.log(newNums)
+
+const books = [
+  {
+    title: "Echoes of the Cosmos",
+    genre: "Science Fiction",
+    published: 2018,
+    edition: 2020
+  },
+  {
+    title: "The Midnight Silhouette",
+    genre: "Mystery",
+    published: 2021,
+    edition: 2025
+  },
+  {
+    title: "Whispers of the Forgotten Kingdom",
+    genre: "Fantasy",
+    published: 2015,
+    edition: 2015
+  },
+  {
+    title: "Beneath the Neon Rain",
+    genre: "Cyberpunk",
+    published: 2024,
+    edition: 2030
+  },
+  {
+    title: "Shadows in the Willow",
+    genre: "Horror",
+    published: 2012,
+    edition: 2020
+  },
+  {
+    title: "The Alchemist's Equation",
+    genre: "Historical Fiction",
+    published: 2019,
+    edition: 2019
+  },
+  {
+    title: "Love in the Time of Algorithm",
+    genre: "Romance",
+    published: 2023,
+    edition: 2026
+  },
+  {
+    title: "Chasing the Horizon",
+    genre: "Adventure",
+    published: 2016,
+    edition: 2020
+  }
+];
+
+let userBooks = books.filter( (b) => b.genre === 'Romance')
+
+userBooks = books.filter( (b) => {
+    return b.published > 2000 && b.genre === 'Romance'
+})
+
+console.log(userBooks);
+
+
