@@ -399,3 +399,21 @@ myNums = [1, 2, 3]
 console.log(myTotal);
 
 // 32:59
+
+// server.js
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+// Create the server and define what it does when a request comes in
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, World!\n');
+});
+
+// Start the server on port 3000
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
