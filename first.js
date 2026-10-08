@@ -366,7 +366,7 @@ const books = [
     published: 2016,
     edition: 2020
   }
-];
+]
 
 let userBooks = books.filter( (b) => b.genre === 'Romance')
 
@@ -477,23 +477,23 @@ function createRealDOMNode(vnode) {
     return document.createTextNode(vnode);
   }
 
-  const \$el = document.createElement(vnode.tag);
+  const $el = document.createElement(vnode.tag);
 
   // Set structural element attributes
   for (const [key, value] of Object.entries(vnode.props)) {
     if (key.startsWith('on') && typeof value === 'function') {
-      \$el.addEventListener(key.substring(2).toLowerCase(), value);
+      $el.addEventListener(key.substring(2).toLowerCase(), value);
     } else {
-      \$el.setAttribute(key, value);
+      $el.setAttribute(key, value);
     }
   }
 
   // Recursively append children
   for (const child of vnode.children) {
-    \$el.appendChild(createRealDOMNode(child));
+    $el.appendChild(createRealDOMNode(child));
   }
 
-  return \$el;
+  return $el;
 }
 
 // ==========================================
@@ -502,9 +502,9 @@ function createRealDOMNode(vnode) {
 function diff(oldVNode, newVNode) {
   // Case 1: Old node doesn't exist, append new node
   if (oldVNode === undefined) {
-    return (\(parent) => {\)parent.appendChild(createRealDOMNode(newVNode));
-      return \$parent.lastChild;
-    };
+    return ((parent) => {parent.appendChild(createRealDOMNode(newVNode));
+      return $parent.lastChild;
+    });
   }
 
   // Case 2: New node dropped entirely, remove old node
@@ -519,16 +519,16 @@ function diff(oldVNode, newVNode) {
   if (typeof oldVNode !== typeof newVNode || 
      ((typeof oldVNode === 'string' || typeof oldVNode === 'number') && oldVNode !== newVNode)) {
     return (parent, currentElement) => {
-      const \(newElement = createRealDOMNode(newVNode);\)parent.replaceChild(newElement, currentElement);
-      return \$newElement;
+      const (newElement = createRealDOMNode(newVNode);\)parent.replaceChild(newElement, currentElement);
+      return $newElement;
     };
   }
 
   // Case 4: Node type tags differ completely (e.g., <div> changed to <section>)
   if (oldVNode.tag !== newVNode.tag) {
     return (parent, currentElement) => {
-      const \(newElement = createRealDOMNode(newVNode);\)parent.replaceChild(newElement, currentElement);
-      return \$newElement;
+      const (newElement = createRealDOMNode(newVNode);\)parent.replaceChild(newElement, currentElement);
+      return $newElement;
     };
   }
 
