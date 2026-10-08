@@ -519,7 +519,8 @@ function diff(oldVNode, newVNode) {
   if (typeof oldVNode !== typeof newVNode || 
      ((typeof oldVNode === 'string' || typeof oldVNode === 'number') && oldVNode !== newVNode)) {
     return (parent, currentElement) => {
-      const (newElement = createRealDOMNode(newVNode);\)parent.replaceChild(newElement, currentElement);
+      const newElement = createRealDOMNode(newVNode);
+      parent.replaceChild(newElement, currentElement);
       return $newElement;
     };
   }
@@ -527,7 +528,8 @@ function diff(oldVNode, newVNode) {
   // Case 4: Node type tags differ completely (e.g., <div> changed to <section>)
   if (oldVNode.tag !== newVNode.tag) {
     return (parent, currentElement) => {
-      const (newElement = createRealDOMNode(newVNode);\)parent.replaceChild(newElement, currentElement);
+      const newElement = createRealDOMNode(newVNode)
+      ;parent.replaceChild(newElement, currentElement);
       return $newElement;
     };
   }
@@ -540,11 +542,11 @@ function diff(oldVNode, newVNode) {
 
     for (const [key, val] of Object.entries(newProps)) {
       if (val !== oldProps[key]) {
-        if (!key.startsWith('on')) \$currentElement.setAttribute(key, val);
+        if (!key.startsWith('on')) $currentElement.setAttribute(key, val);
       }
     }
     for (const key of Object.keys(oldProps)) {
-      if (!(key in newProps)) \$currentElement.removeAttribute(key);
+      if (!(key in newProps)) $currentElement.removeAttribute(key);
     }
 
     // 5b. Core Recursive Reconciliation of child arrays
@@ -561,7 +563,7 @@ function diff(oldVNode, newVNode) {
     // Append remaining new elements
     if (newChildren.length > oldChildren.length) {
       for (let i = commonLength; i < newChildren.length; i++) {
-        \$currentElement.appendChild(createRealDOMNode(newChildren[i]));
+        $currentElement.appendChild(createRealDOMNode(newChildren[i]));
       }
     }
 
@@ -572,7 +574,7 @@ function diff(oldVNode, newVNode) {
       }
     }
 
-    return \$currentElement;
+    return $currentElement;
   };
 }
 
@@ -581,7 +583,7 @@ function diff(oldVNode, newVNode) {
 // ==========================================
 function mountApp(rootElement, appComponent, initialState) {
   let oldVNode = null;
-  let \$root = rootElement;
+  let $root = rootElement;
   let isScheduled = false;
 
   // The rendering pipeline
@@ -591,12 +593,12 @@ function mountApp(rootElement, appComponent, initialState) {
     
     if (!oldVNode) {
       // First structural insertion
-      \$root.appendChild(createRealDOMNode(newVNode));
+      $root.appendChild(createRealDOMNode(newVNode));
       root = root.lastChild;
     } else {
       // Delta rendering calculation via diff patches
       const patch = diff(oldVNode, newVNode);
-      \$root = patch(root.parentNode, root);
+      $root = patch(root.parentNode, root);
     }
     
     oldVNode = newVNode;
